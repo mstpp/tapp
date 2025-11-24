@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "tapp-service",
+    "tapp-tests"
+]
