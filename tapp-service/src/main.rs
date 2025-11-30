@@ -12,13 +12,12 @@ async fn root() -> impl Responder {
 
 #[get("/help")]
 async fn help() -> impl Responder {
-    HttpResponse::Ok().body("This is the simple web app to check when I took my meds.\n \
-                            Here is how you use it:")
+    HttpResponse::Ok().body("Simple endpoint to aid activity tracking")
 }
 
 #[post("/tap")]
 async fn user_tap(req_body: String) -> impl Responder {
-    let body: Value = serde_json::from_str(&req_body).unwrap();
+    let body: Value = serde_json::from_str(&req_body).unwrap(); // TODO why deser here?
     println!("{:#?}", &body);
     HttpResponse::Ok().body(Tap::now(body["comment"].to_string().as_ref()))
 }

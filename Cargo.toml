@@ -1,5 +1,3 @@
 [workspace]
-members = [
-    "tapp-service",
-    "tapp-tests"
-]
+members = ["tapp-service", "tapp-tests"]
+resolver = "2"
